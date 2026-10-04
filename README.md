@@ -86,3 +86,92 @@ Model Evaluation
 Explainability Analysis
         ↓
 Streamlit Application
+### 4. Class Imbalance Handling
+
+Two approaches were investigated:
+---
+
+## Machine Learning Models
+
+The following models were evaluated:
+
+### Logistic Regression
+
+A linear classification model used as an interpretable baseline.
+
+### Balanced Logistic Regression
+
+Logistic Regression with class weighting to investigate the effect of class imbalance.
+
+### Logistic Regression with SMOTE
+
+Logistic Regression trained after applying SMOTE to the training data.
+
+### Decision Tree
+
+A single interpretable Decision Tree was used to compare transparent rule-based predictions with more complex models.
+
+The tree was configured with a maximum depth of 4.
+
+### Random Forest
+
+A Random Forest ensemble containing 300 decision trees was evaluated to provide a stronger nonlinear ensemble model.
+
+### Neural Network
+
+A Multi-Layer Perceptron (MLP) neural network was used as the more complex model.
+
+Architecture:
+
+```text
+13 Input Features
+       ↓
+64 Neurons
+       ↓
+32 Neurons
+       ↓
+1 Output
+
+cp       0.468613
+ca       0.153171
+thal     0.111776
+oldpeak  0.064609
+exang    0.060984
+sex      0.051363
+
+cp       0.163001
+thalach  0.123861
+ca       0.113423
+thal     0.098275
+oldpeak  0.091120
+age      0.082666
+
+thal
+sex
+ca
+oldpeak
+thalach
+exang
+age
+
+heart-disease-diagnostic-aid/
+│
+├── app/
+│   └── app.py
+├── data/
+│   └── heart.csv
+├── models/
+├── notebooks/
+├── reports/
+├── src/
+│   ├── config.py
+│   ├── data_utils.py
+│   ├── evaluate.py
+│   ├── explain.py
+│   └── train.py
+│
+├── .gitignore
+├── LICENSE
+├── README.md
+├── requirements.txt
+└── run_project.py
