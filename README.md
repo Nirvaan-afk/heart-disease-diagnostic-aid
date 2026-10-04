@@ -80,4 +80,51 @@ Model Evaluation
 Explainability Analysis
         ↓
 Streamlit Application
+```
+
+## Machine Learning Models
+
+The following models were evaluated.
+
+### Logistic Regression
+
+Logistic Regression was used as an interpretable baseline classification model.
+
+It estimates the probability of a sample belonging to the positive class.
+
+### Balanced Logistic Regression
+
+A class-weighted version of Logistic Regression was evaluated to investigate the effect of explicitly accounting for class imbalance.
+
+### Logistic Regression with SMOTE
+
+SMOTE was applied to the training data before training Logistic Regression.
+
+The preprocessing and model were combined in a pipeline.
+
+### Decision Tree
+
+A single Decision Tree was used as an interpretable rule-based model.
+
+The tree was configured with:
+
+```text
+Maximum depth = 4
+```
+Decision Trees are useful for explainability because their predictions can be represented through a sequence of decision rules.
+
+### Random Forest
+
+A Random Forest was used as an ensemble learning model.
+
+The Random Forest contained:
+
+```text
+300 decision trees
+
+
+
+
+
+
 
